@@ -18,10 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
-    user: 'aawalker238',
-    password: '',
-    database: 'face-finder'
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
